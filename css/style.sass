@@ -1,0 +1,240 @@
+@font-face 
+    font-family: 'Lato'
+    src: url('../fonts/Lato-Regular.eot')
+    src: url('../fonts/Lato-Regular.eot?#iefix') format('embedded-opentype'), url('../fonts/Lato-Regular.woff') format('woff2'), url('../fonts/Lato-Regular.woff2') format('woff'), url('../fonts/Lato-Regular.ttf') format('woff')
+    font-weight: normal
+    font-style: normal
+    font-display: swap
+
+html
+    width: 100%
+    min-height: 100vh
+    background-color: #498CEC
+    font-family: 'Lato', sans-serif
+    font-size: 18px
+    color: #fff
+    line-height: 1.2
+    box-sizing: border-box
+
+body
+    margin: 0
+
+.container
+    max-width: 1192px
+    margin: 0 auto
+    box-sizing: border-box
+    padding: 75px 75px 122px 99px
+
+.header
+    margin-bottom: 185px
+
+.city
+    position: relative
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+
+.city-name
+    font-size: 2.77rem
+    margin-bottom: 9px
+    width: 50%
+
+.btn__city 
+    padding: 0
+    font-family: 'Lato', sans-serif
+    font-size: 1rem
+    color: #fff
+    background: none
+    border: none
+    border-bottom: 0px solid #fff
+    opacity: 0.6
+    cursor: pointer
+    + .btn__city
+        margin-left: 29px
+
+.city-definition__icon
+    display: inline-block
+    width: 30px
+    height: 30px
+    background-image: url('../images/location.png')
+    vertical-align: middle
+
+.city-definition__text
+    display: inline-block
+    height: 30px
+    line-height: 30px
+    vertical-align: middle
+
+.city__search
+    display: flex
+    align-items: center
+    position: absolute
+    left: 0
+    top: 0
+    width: 579px
+    height: 0px
+    background: #fff
+    border-radius: 5px
+    padding-left: 30px
+    box-sizing: border-box
+    opacity: 0
+    z-index: -10
+    transition: all .2s linear
+    &.active
+        height: 97px
+        opacity: 1
+        z-index: 100
+        transition: all .2s linear
+        .search__line
+            font-size: 1.66rem
+            transition: all .2s linear
+
+.search__line
+    font-size: 0rem
+    width: 80%
+    outline: none
+    border: solid 0 rgba(0, 0, 0, 0.5)
+    border-bottom-width: 1px
+
+.search__ok
+    font-size: 1.66rem
+    width: 20%
+    height: 100%
+    background: none
+    border: none
+    color: #000
+    transition: 0.2s
+    &:hover
+        color: #1086FF
+        transition: 0.2s
+
+.deg-toggle
+    width: 50%
+    text-align: right
+    &__deg
+        vertical-align: bottom
+        opacity: 0.4
+        line-height: 29px
+
+.toggle-btn
+    position: relative
+    display: inline-flex
+    width: 77px
+    height: 29px
+    vertical-align: middle
+    border: 1px solid rgba(255,255,255,0.4)
+    border-radius: 8px
+    overflow: hidden
+    &__label
+        width: 50%
+        height: 100%
+        text-align: center
+        line-height: 29px
+        color: rgba(255,255,255,0.4)
+        cursor: pointer     
+    &__radio
+        position: absolute
+        top: -100%
+        left: 0
+        z-index: -10
+        opacity: 0
+        margin: 0
+
+#C:checked + label
+    background: rgba(255,255,255,0.4)
+    color: rgba(255,255,255,1)
+
+#F:checked + label
+    background: rgba(255,255,255,0.4)
+    color: rgba(255,255,255,1)
+  
+
+.weather
+    text-align: center
+    &__icon
+        display: inline-block
+        width: 200px
+        height: 200px
+        vertical-align: bottom
+        background-size: 100% 100%
+    &__temp
+        display: inline-block
+        font-size: 10rem
+        height: 12rem
+        text-align: left
+        vertical-align: top
+    &__description
+        margin: 10px 0 0
+        font-size: 1.38rem
+        text-align: center
+
+.weather-params
+    display: flex
+    flex-wrap: wrap
+    margin: 218px auto 0
+    &__item
+        width: 25%
+        text-align: left
+        box-sizing: border-box
+        .param__name
+            display: block
+            opacity: 0.6
+            margin-bottom: 10px
+        .param__value
+            font-size: 1.38rem
+        &:not(:first-child)
+            padding-left: 20px
+            
+
+@media screen and ( max-width: 1100px)
+    .weather-params__item
+        width: 50%
+        &:nth-last-child(-n+2)
+            margin-top: 35px
+        &:not(:first-child)
+            padding-left: 0
+
+@media screen and ( max-width: 800px)
+    .container
+        padding: 19px 19px 41px
+    .header
+        margin-bottom: 145px
+    .city-name
+        font-size: 1.66rem
+    .btn__city
+        font-size: 0.83rem
+        margin-bottom: 18px
+    .city__search
+        width: 100%
+        &.active
+            height: 85px
+            .search__line, .search__ok
+                font-size: 1rem
+    .weather__icon
+        width: 6rem
+        height: 6rem
+    .weather__temp
+        font-size: 5rem
+        height: 6rem
+    .weather-params
+        margin: 186px auto 0
+        .param__name
+            font-size: 0.83rem
+            margin-bottom: 2px
+        .param__value
+            font-size: 1rem
+
+@media screen and (max-width: 400px)
+    .btn__city
+        display: block
+        margin-bottom: 0
+        margin-top: 20px
+    .btn__city + .btn__city
+        margin-left: 0
+    .weather__temp 
+        font-size: 4rem
+        height: 4rem
+        line-height: 1
+    .weather__icon
+        width: 4.5rem
+        height: 4.5rem

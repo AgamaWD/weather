@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main class="container">
+        <header class='header'>
+            <div class="city">
+                <span class="city-name js-city-name"></span>
+                <div class="deg-toggle">
+                    <span class="deg-toggle__deg">&deg;</span>
+                    <div class='toggle-btn'>            
+                        <input class='toggle-btn__radio js-units_toggle' type="radio" name="deg" value="C" id="C">
+                        <label class="toggle-btn__label" for="C">C</label>
+                        <input class='toggle-btn__radio js-units_toggle' type="radio" name="deg" value="F" id="F">
+                        <label class="toggle-btn__label" for="F">F</label>
+                    </div>
+                </div>
+                <div>
+                    <button class="btn btn__city js-city-selection">Сменить город</button>
+                    <button class='btn btn__city city-definition js-city-definition'>
+                        <span class='city-definition__icon'></span>
+                        <span class="city-definition__text">Моё местоположение</span>
+                    </button>
+                </div>
+                <div class='city__search search js-search'>
+                    <input class='search__line js-search-line' type="text" list="cities">
+                    <datalist class='js-list' id="cities">
+                    </datalist>
+                    <button type='button' class='search__ok js-search-ok'>OK</button>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="weather">
+                <span class="weather__icon js-w-icon"></span>
+                <span class="weather__temp js-temp"></span>
+                <p class="weather__description js-desc"></p>
+            </div>
+            <div class="weather-params">
+                <div class="weather-params__item param">
+                    <span class="param__name">Ветер</span>
+                    <span class="param__value js-wind"></span>
+                </div>
+                <div class="weather-params__item param">
+                    <span class="param__name">Давление</span>
+                    <span class="param__value js-press"></span>
+                </div>
+                <div class="weather-params__item param">
+                    <span class="param__name">Влажность</span>
+                    <span class="param__value js-hum"></span>
+                </div>
+                <div class="weather-params__item param">
+                    <span class="param__name">Вероятность дождя</span>
+                    <span class="param__value js-cr"></span>
+                </div>
+            </div>
+        </main>
+    </main>
+    <script src="js/secondary_functions.js"></script>
+    <script src="js/sityNameFns.js"></script>
+    <script src="js/weather.js"></script>
+</body>
+</html>
