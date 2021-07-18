@@ -16,7 +16,7 @@ function showWeather(t, d, ws, wd, p, h, cr, i) {
     weatherPress.innerHTML = `${p} мм рт. ст.`
     weatherHum.innerHTML = `${h}%`
     weatherCR.innerHTML = `${cr}%`
-    weatherIcon.style.backgroundImage = `url('../images/${i}.png')`
+    weatherIcon.style.backgroundImage = `url('images/${i}.png')`
 };
 
 function getWeather(lat, lon) {
